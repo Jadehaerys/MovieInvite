@@ -1,66 +1,144 @@
+/* General resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Full-page background */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #fefefe;
-  color: #333;
-  padding: 20px;
-}
-
-.container {
-  max-width: 500px;
-  margin: auto;
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-}
-
-h1, h2 {
-  text-align: center;
-  color: #e50914;
-}
-
-.movie-poster {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.movie-poster img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-form {
+  background: url("images/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  align-items: start;
+  padding: 2rem 1rem;
 }
 
-input, button {
-  padding: 10px;
-  font-size: 16px;
+/* Main container */
+.container {
+  max-width: 1000px;
+  width: 100%;
 }
 
-button {
-  background: #e50914;
+/* Love Letter Card */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fade-in 1.5s ease;
+}
+
+.card h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #e75480;
+}
+
+.card p {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.card button {
+  background-color: #ff8fab;
   color: white;
   border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 10px;
   cursor: pointer;
-  border-radius: 6px;
+  transition: 0.3s ease;
 }
 
-button:hover {
-  background: #c40810;
+.card button:hover {
+  background-color: #ff6f9c;
 }
 
-.hidden {
-  display: none;
+/* Photo gallery */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
 }
 
-#invitationOutput {
-  margin-top: 20px;
-  background: #f3f3f3;
-  padding: 15px;
-  border-radius: 8px;
+.photo-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Music toggle button */
+#music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #ff8fab;
+  color: white;
+  border: none;
+  padding: 14px 16px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+#music-toggle:hover {
+  background-color: #ff6f9c;
+  transform: scale(1.1);
+}
+
+/* Animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .card h1 {
+    font-size: 1.5rem;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+
+  .card button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .photo-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  #music-toggle {
+    bottom: 16px;
+    right: 16px;
+    padding: 12px;
+    font-size: 1rem;
+  }
 }

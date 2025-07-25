@@ -3,42 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BabyMovieInvite</title>
+    <title>Love Letter Generator</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1>🎬 Movie Night Invitation</h1>
-
-      <div class="movie-poster">
-        <label for="posterUpload">Change Poster:</label>
-        <input type="file" id="posterUpload" accept="image/*" />
-        <img id="movieImage" src="./default-poster.jpg" alt="Movie Poster" />
+      <div class="card fade-in">
+        <h1>💌 A Love Letter for You</h1>
+        <p id="letter">You’re the type of person I’d stay up all night for.</p>
+        <button onclick="generateLetter()">Generate Letter</button>
       </div>
 
-      <form id="invitationForm">
-        <label>Date:</label>
-        <input type="date" id="movieDate" required />
-
-        <label>Time:</label>
-        <input type="time" id="movieTime" required />
-
-        <label>Location:</label>
-        <input
-          type="text"
-          id="movieLocation"
-          placeholder="e.g. Ayala Cinemas"
-          required
-        />
-
-        <button type="submit">Generate Invitation</button>
-      </form>
-
-      <div id="invitationOutput" class="hidden">
-        <h2>You're Invited! 🍿</h2>
-        <p id="outputText"></p>
-        <button onclick="copyInvitation()">📋 Copy Invitation</button>
+      <div class="photo-gallery fade-in">
+        <img src="images/her-pic1.png" alt="Her Smile" />
+        <img src="images/her-pic2.png" alt="Sweet Memories" />
+        <img src="images/her-pic1.png" alt="Her Smile" />
+        <img src="images/her-pic2.png" alt="Sweet Memories" />
+        <img src="images/her-pic1.png" alt="Her Smile" />
+        <img src="images/her-pic2.png" alt="Sweet Memories" />
       </div>
+      <audio id="bg-music" loop>
+        <source src="BgMusic\숀 (SHAUN) - Way Back Home Fingerstyle _ Guitar Solo Cover - La Thang.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      <button id="music-toggle">🔈</button>
     </div>
 
     <script src="index.js"></script>
